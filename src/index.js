@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import IFrame from "./components/IFrame";
 
-export function TestButton(props) {
+export function TestButton() {
   const [iframeOpen, setIframeOpen] = useState(false);
   const RedirectClick = () => {
     window.open(
@@ -13,18 +14,12 @@ export function TestButton(props) {
     <>
       <div>
         <button onClick={() => setIframeOpen(!iframeOpen)}>
-          I Frame Button
+          IFrame Button
         </button>
         <button onClick={() => RedirectClick()}> Redirect Button</button>
         {iframeOpen && (
           <div>
-            <iframe
-              title="MyIFrame"
-              width="600"
-              height="400"
-              src="https://www.example.com"
-              allowFullScreen
-            />
+            <IFrame width="600" height="400" />
           </div>
         )}
       </div>
